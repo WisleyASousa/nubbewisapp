@@ -9,7 +9,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView>
-      <Text preset='paragraphCaption' style={{ fontFamily: 'Satoshi-Black' }}>
+      <Text preset='headingLarge'>
         Hello World!
       </Text>
     </SafeAreaView>
