@@ -16,7 +16,30 @@ function App(): JSX.Element {
         <Text preset='headingLarge'>
           Hello World!
         </Text>
-        <Button title='Press me!' />
+        <Button 
+          title='Press me!'
+          loading 
+          preset='primary'
+          marginBottom='s12'
+        />
+        <Button 
+          title='Press me!'
+          loading 
+          preset='primary'
+          marginBottom='s12'
+          disabled
+        />
+        <Button 
+          title='Press me!' 
+          preset='outline'
+          marginBottom='s12'
+        />
+        <Button 
+          title='Press me!' 
+          preset='outline'
+          marginBottom='s12'
+          disabled
+        />
       </SafeAreaView>
     </ThemeProvider>
   );
