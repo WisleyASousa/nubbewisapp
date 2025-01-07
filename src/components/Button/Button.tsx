@@ -1,30 +1,26 @@
-import React from "react";
-import { Text } from "../Text/Text";
-import { useTheme } from "@shopify/restyle";
-import { Theme } from "../../theme/theme";
-import { TouchableOpacityBox, TouchableOpacityBoxProps } from "../Box/Box";
-import { buttonPresets } from "./buttonPresets";
-import { ActivityIndicator } from "../ActivityIndicator/ActivityIndicator";
+import React from 'react';
+import {ActivityIndicator} from '../ActivityIndicator/ActivityIndicator';
+import {TouchableOpacityBox, TouchableOpacityBoxProps} from '../Box/Box';
+import {Text} from '../Text/Text';
+import {buttonPresets} from './buttonPresets';
 
-export type ButtonPreset = "primary" | "outline";
+export type ButtonPreset = 'primary' | 'outline';
+
 interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;
   loading?: boolean;
-  preset: ButtonPreset;
+  preset?: ButtonPreset;
   disabled?: boolean;
 }
+
 export function Button({
   title,
   loading,
-  preset = "primary",
+  preset = 'primary',
   disabled,
-  ...TouchableOpacityBoxProps
+  ...touchableOpacityBoxProps
 }: ButtonProps) {
-
-  const { } = useTheme<Theme>();
-
-  const buttonUI = buttonPresets[preset][disabled ? "disabled" : "defauld"];
-
+  const buttonPreset = buttonPresets[preset][disabled ? 'disabled' : 'default'];
   return (
     <TouchableOpacityBox
       disabled={disabled || loading}
@@ -33,22 +29,15 @@ export function Button({
       alignItems="center"
       justifyContent="center"
       borderRadius="s16"
-      {...buttonUI.container}
-      {...TouchableOpacityBoxProps}
-      margin="s8"
-    >
+      {...buttonPreset.container}
+      {...touchableOpacityBoxProps}>
       {loading ? (
-        <ActivityIndicator
-         color={buttonUI.content}
-        />
-      )
-        : (<Text
-          preset="paragraphMedium"
-          bold
-          selectionColor={buttonUI.content}
-        >
+        <ActivityIndicator color={buttonPreset.content} />
+      ) : (
+        <Text preset="paragraphMedium" bold color={buttonPreset.content}>
           {title}
-        </Text>)}
+        </Text>
+      )}
     </TouchableOpacityBox>
-  )
+  );
 }

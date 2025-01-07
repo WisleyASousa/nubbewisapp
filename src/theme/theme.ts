@@ -9,6 +9,7 @@ const palette = {
   greenSuccessLight: '#D8FFEC',
   redError: '#EA3838',
   redErrorLight: '#FBECEC',
+
   grayBlack: '#000000',
   gray1: '#636363',
   gray2: '#8E8E8E',
@@ -17,10 +18,10 @@ const palette = {
   gray5: '#F5F5F5',
   grayWhite: '#FFFFFF',
 };
+
 export const theme = createTheme({
   colors: {
     ...palette,
-
     primary: palette.greenPrimary,
     primaryContrast: palette.grayWhite,
 
@@ -34,7 +35,6 @@ export const theme = createTheme({
 
     success: palette.greenSuccess,
     successLight: palette.greenSuccessLight,
-    
   },
   spacing: {
     s4: 4,
@@ -55,6 +55,7 @@ export const theme = createTheme({
     s12: 12,
     s16: 16,
   },
+
   textVariants: {
     defaults: {},
   },

@@ -8,12 +8,12 @@ interface ButtonUI {
 }
 
 export const buttonPresets: Record<ButtonPreset, {
-  defauld: ButtonUI;
+  default: ButtonUI;
   disabled: ButtonUI;
   }
 > = {
   primary: {
-   defauld: {
+   default: {
     container: {
       backgroundColor: 'buttonPrimary',
     },
@@ -27,7 +27,7 @@ export const buttonPresets: Record<ButtonPreset, {
   },
   },
   outline: {
-    defauld: {
+    default: {
     container: {
       borderWidth: 1,
       borderColor: 'buttonPrimary',
