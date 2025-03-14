@@ -1,15 +1,13 @@
 import React from "react";
-import { ActivityIndicator as RNActivityIndicator, ActivityIndicatorProps } from "react-native";
-import { Theme, ThemeColors } from "../../theme/theme";
-import { useTheme } from "@shopify/restyle";
-
+import { ActivityIndicatorProps, ActivityIndicator as RNActivityIndicator } from "react-native";
+import { useAppTheme } from "../../hooks/useAppTheme";
+import { ThemeColors } from "../../theme/theme";
 interface RNActivityIndicatorProps extends Omit<ActivityIndicatorProps, 'color'> {
   color: ThemeColors;
 }
 
 export function ActivityIndicator({ color }: RNActivityIndicatorProps) {
-
-  const { colors } = useTheme<Theme>();
+  const { colors } = useAppTheme();
 
   return <RNActivityIndicator color={colors[color]} />;
 }

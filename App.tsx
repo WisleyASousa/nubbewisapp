@@ -3,9 +3,10 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import { Text } from './src/components/Text/Text';
-import { Button } from './src/components/Button/Button';
 import { ThemeProvider } from '@shopify/restyle';
+import { Box } from './src/components/Box/Box';
+import { Icon } from './src/components/Icon/Icon';
+import { Text } from './src/components/Text/Text';
 import { theme } from './src/theme/theme';
 
 function App(): JSX.Element {
@@ -13,36 +14,16 @@ function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
-        <Text preset='headingLarge'>
-          Hello World!
+        <Text preset='headingLarge' italic>
+          Coffstack
         </Text>
-        <Button 
-          title='Press me!'
-          loading 
-          preset='primary'
-          marginBottom='s12'
-        />
-        <Button 
-          title='Press me!'
-          loading 
-          preset='primary'
-          marginBottom='s12'
-          disabled
-        />
-        <Button 
-          title='Press me!' 
-          preset='outline'
-          marginBottom='s12'
-        />
-        <Button 
-          title='Press me!' 
-          preset='outline'
-          marginBottom='s12'
-          disabled
-        />
+        <Box flexDirection='row'>
+          <Icon name='eyeOff' color={'greenSuccess'} size={20}/>
+          <Icon name='eyeOn' color={'primary'} size={20}/>
+        </Box>
       </SafeAreaView>
     </ThemeProvider>
   );
 }
 
-export default App;
+export default App; 
